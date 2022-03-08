@@ -1,0 +1,43 @@
+form {
+
+  position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%,-50%);
+    width: 50%;
+    display: flex;
+    align-content: center;
+    justify-content:space-around;
+    flex-direction: column;
+    padding: 20px 0;
+    font-weight: bold;
+    
+  }
+  
+  form input,
+  form button {
+    width: 100%;
+  }
+  
+  form input {
+    padding: 10px;
+    margin: 4px 0 14px 0;
+    border: 1px solid #eee;
+  }
+  
+  form button {
+    background: #0b6396;
+    color: #fff;
+    border: none;
+    outline: none;
+    padding: 14px 0;
+    margin: 5px 0;
+    font-size: 18px;
+    letter-spacing: 1px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  
+  form button:hover {
+    background: #0e81c8;
+  }

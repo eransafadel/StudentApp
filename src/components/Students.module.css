@@ -1,0 +1,27 @@
+
+
+.gridContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  border-radius: 14px;
+  border-color: blue;
+  
+  /* overflow:hidden; */
+  /* grid-template-columns: repeat(3, 0.3fr); */
+}
+
+.flexContainer {
+    display: flex;
+    flex-wrap:wrap ;
+    justify-content:center;
+    align-content:space-between;
+    gap: 10px;
+}
+
+.regular {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+

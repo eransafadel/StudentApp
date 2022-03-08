@@ -1,0 +1,38 @@
+.item {
+    
+    margin: 1rem 0;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    padding: 1.5rem;
+    background-color: #02285a;
+    border-width: 3px;
+    border-style: solid;
+    border-color:rgb(33, 202, 188);
+    color: white;
+    flex: 0 0 35%;
+  }
+
+  .myBtn{
+    background-color: #3490db;
+    color: white;
+    border: none;
+    cursor:pointer;
+    text-align: center;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    font-size: 20px;
+    font-family: 'Brush Script MT', cursive;
+  }
+
+  .myBtn:hover{
+      background-color: #03e2f6;
+  }
+
+  .myFont{
+    font-family: 'Brush Script MT', cursive;
+  }
+
+
+
+
+
+  

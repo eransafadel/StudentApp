@@ -1,0 +1,39 @@
+.button {
+  
+  font: inherit;
+  padding: 0.5rem 1.5rem;
+  border: 1px solid #04aebe;
+  color: white;
+  background: #024cad;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.26);
+  cursor: pointer;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button:hover,
+.button:active {
+  background: #44cffa;
+  border-color: #10b2b8;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.26);
+}
+
+@media (min-width: 768px) {
+  .button {
+    width: auto;
+  }
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.regular {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
