@@ -10,8 +10,8 @@ const Field: React.FC<Props> = ({ image, title, content }) => {
   return (
     <div className={classes.myField}>
       <img className={classes.myImg} src={image} />
-      <h2 className={classes.myFontTitle}>{title+"  "}</h2>
-      <h4 className={classes.myFontContent}>{"   "+  content}</h4>
+      <h3>{title}</h3>
+      <h3 className={classes.myFontContent}>{"   "+  content}</h3>
       
    
     </div>

@@ -17,11 +17,8 @@
     
   }
 
-  .myFontTitle{
-    font-family: 'Brush Script MT', cursive;
-    border-bottom: 1px solid white;
-  }
+  
   .myFontContent{
-    font-family: Copperplate, Papyrus, fantasy;
-    color:rgb(250, 246, 0);
+    
+    color:rgb(250, 192, 0);
   }

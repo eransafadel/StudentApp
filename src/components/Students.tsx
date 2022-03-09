@@ -10,7 +10,6 @@ const Students: React.FC = (props) => {
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [studentPerPage, setStudentPerPage] = useState<number>(6);
 
-
   const nextPage = () => {
     if (currentPage >= students.length / studentPerPage) return;
 
@@ -20,13 +19,29 @@ const Students: React.FC = (props) => {
   const prevPage = () => {
     if (currentPage === 1) return;
 
-   
     setCurrentPage(currentPage - 1);
   };
 
   const currentPageFunc = (index: number) => {
     if (currentPage <= 1) return;
     setCurrentPage(index);
+  };
+
+  const loadingData = (resData: any) => {
+    const loadedStudents: Student[] = [];
+    for (const key in resData) {
+      const tempStud = new Student(
+        resData[key].id,
+        resData[key].name,
+        resData[key].age,
+        resData[key].gender,
+        resData[key].school,
+        resData[key].city
+      );
+      loadedStudents.push(tempStud);
+    }
+    localStorage.setItem("students", JSON.stringify(loadedStudents)); // save in local localStorage
+    setStudents(loadedStudents);
   };
 
   const deleteItemsHandler = () => {
@@ -82,7 +97,7 @@ const Students: React.FC = (props) => {
   const fetchStudents = useCallback(async () => {
     const savedData = localStorage.getItem("students");
     let newStuds: Student[];
-    if (savedData !== null) {
+    if (savedData !== null && savedData.length > 0) {
       newStuds = JSON.parse(savedData).map((item: any) => {
         return Student.fromJSON(item);
       });
@@ -94,7 +109,7 @@ const Students: React.FC = (props) => {
 
     try {
       const res = await fetch(
-        "https://run.mocky.io/v3/f8e5d0ee-1cb8-4b6e-97c1-01d45b0bc521"
+        "https://run.mocky.io/v3/f1aea487-6aaf-49ee-9c9f-9f2a2f5cf6b0"
       );
 
       if (!res.ok) {
@@ -103,20 +118,7 @@ const Students: React.FC = (props) => {
 
       const resData = await res.json();
 
-      const loadedStudents: Student[] = [];
-      for (const key in resData) {
-        const tempStud = new Student(
-          resData[key].id,
-          resData[key].name,
-          resData[key].age,
-          resData[key].gender,
-          resData[key].school,
-          resData[key].city
-        );
-        loadedStudents.push(tempStud);
-      }
-      localStorage.setItem("students", JSON.stringify(loadedStudents)); // save in local localStorage
-      setStudents(loadedStudents);
+      loadingData(resData);
     } catch (error) {}
   }, []);
 
@@ -142,8 +144,8 @@ const Students: React.FC = (props) => {
       <Button onClick={deleteItemsHandler} text="Delete"></Button>
       <section className={classes.gridContainer}>{currentStudentList}</section>
       <div className={classes.flexContainer}>
-         <Button onClick={prevPage} text="Prev"></Button>
-         <Button onClick={nextPage} text="Next"></Button>
+        <Button onClick={prevPage} text="Prev"></Button>
+        <Button onClick={nextPage} text="Next"></Button>
       </div>
     </div>
   );

@@ -26,7 +26,7 @@ form {
   }
   
   form button {
-    background: #0b6396;
+    background: #010b5d;
     color: #fff;
     border: none;
     outline: none;
@@ -39,5 +39,5 @@ form {
   }
   
   form button:hover {
-    background: #0e81c8;
+    background: #02598f;
   }

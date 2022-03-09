@@ -56,14 +56,14 @@ const Form: React.FC<Props> = ({ stud }) => {
     <form className ={classes.form} onSubmit={handleSubmit}>
       <label>Name</label>
       <input
-        type="text"
+        type="text" maxLength={15}
         required
         value={textName}
         onChange={(e) => setName(e.target.value)}
       />
       <label>Age</label>
       <input
-        type="text"
+       type="number" min="1" max="99"
         required
         value={age}
         onChange={(e) => setAge(e.target.value)}
@@ -71,6 +71,7 @@ const Form: React.FC<Props> = ({ stud }) => {
       <label>Gender</label>
       <input
         type="text"
+        maxLength={6}
         required
         value={gender}
         onChange={(e) => setGender(e.target.value)}
@@ -78,6 +79,7 @@ const Form: React.FC<Props> = ({ stud }) => {
       <label>School</label>
       <input
         type="text"
+        maxLength={15}
         required
         value={school}
         onChange={(e) => setSchool(e.target.value)}
@@ -85,6 +87,7 @@ const Form: React.FC<Props> = ({ stud }) => {
       <label>City</label>
       <input
         type="text"
+        maxLength={15}
         required
         value={city}
         onChange={(e) => setCity(e.target.value)}
