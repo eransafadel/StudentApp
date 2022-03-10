@@ -45,6 +45,7 @@ const Students: React.FC = (props) => {
   };
 
   const deleteItemsHandler = () => {
+    if(selectedStud.length===0) return;
     const tempIdStud = students.map((stud) => {
       return stud.id;
     }); // only id field
@@ -55,8 +56,11 @@ const Students: React.FC = (props) => {
 
     localStorage.setItem("students", JSON.stringify(combined));
     setStudents(combined);
-    const currPage = Math.ceil(combined.length / 6);
-    currentPageFunc(currPage);
+
+    
+    const temp:string[]=[];
+    setSelectedStud(temp);
+    console.log("select size:" +selectedStud.length);
   };
 
   const checkEditStudent = (newStuds: Student[]) => {
@@ -134,6 +138,8 @@ const Students: React.FC = (props) => {
     indexOfFirstStudent,
     indexOfLastStudent
   );
+  if(currentStudent.length===0)
+  prevPage();
 
   const currentStudentList = currentStudent.map((stud) => (
     <StudentItem student={stud} key={stud.id} selectItem={selectedItem} />
@@ -141,11 +147,11 @@ const Students: React.FC = (props) => {
 
   return (
     <div>
-      <Button onClick={deleteItemsHandler} text="Delete"></Button>
+      <Button onClick={deleteItemsHandler} text="delete"></Button>
       <section className={classes.gridContainer}>{currentStudentList}</section>
       <div className={classes.flexContainer}>
-        <Button onClick={prevPage} text="Prev"></Button>
-        <Button onClick={nextPage} text="Next"></Button>
+        <Button onClick={prevPage} text="prev"></Button>
+        <Button onClick={nextPage} text="next"></Button>
       </div>
     </div>
   );

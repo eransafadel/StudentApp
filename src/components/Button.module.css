@@ -4,7 +4,12 @@
   padding: 0.5rem 1.5rem;
   border: 1px solid #04aebe;
   color: white;
-  background: #024cad;
+  text-transform: uppercase;
+  font-size:15px;
+  background: linear-gradient(45deg,#0417be,#0ebbf0);
+  padding: 12px 30px;
+  border-radius:30px;
+  border: none;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.26);
   cursor: pointer;
 }
@@ -15,7 +20,7 @@
 
 .button:hover,
 .button:active {
-  background: #188bad;
+  background: linear-gradient(45deg,#04ebd7,#0181a8);
   border-color: #10b2b8;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.26);
 }
